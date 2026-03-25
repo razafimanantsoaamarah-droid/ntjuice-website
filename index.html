@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>NTJuice | Jus naturels de Madagascar</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+	<header>
+		<nav class="sticky-nav">
+			<div class="nav-inner">
+				<div class="logo">
+					<a href="#">NTJuice<span>.</span></a>
+				</div>
+				<input type="checkbox" id="menu-toggle" class="menu-toggle">
+				<label for="menu-toggle" class="hamburger">
+					<span></span><span></span><span></span>
+				</label>
+				<ul class="nav-links">
+					<li><a href="#">Accueil</a></li>
+					<li><a href="#products">Nos jus</a></li>
+					<li><a href="#about">À propos</a></li>
+					<li><a href="./docs/contact.html">Contact</a></li>
+					<li><a href="./docs/shop.html" class="btn-order">Commander →</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="hero-section">
+			<div class="bg-layer"></div>
+			<div class="grain"></div>
+			<div class="leaf leaf-1">
+				<svg viewBox="0 0 320 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M280 10 C320 60 340 140 280 200 C220 260 120 300 80 380 C60 420 20 440 10 410 C0 380 40 320 80 270 C120 220 180 160 200 100 C220 40 240 -40 280 10Z"
+						fill="url(#lg1)" opacity=".9" />
+					<defs>
+						<linearGradient id="lg1">
+							<stop offset="0%" stop-color="#3e8e41" stop-opacity=".95" />
+							<stop offset="100%" stop-color="#1e4a1e" stop-opacity=".7" />
+						</linearGradient>
+					</defs>
+				</svg>
+			</div>
+			<div class="leaf leaf-2">
+				<svg viewBox="0 0 280 340" fill="none">
+					<path
+						d="M40 330 C0 280 -20 200 40 140 C100 80 200 50 240 -10 C260 -40 280 0 260 30 C240 60 180 90 140 140 C100 190 80 260 80 330Z"
+						fill="url(#lg2)" opacity=".85" />
+					<defs>
+						<linearGradient id="lg2">
+							<stop offset="0%" stop-color="#3e8e41" />
+							<stop offset="100%" stop-color="#1e4a1e" />
+						</linearGradient>
+					</defs>
+				</svg>
+			</div>
+			<div class="leaf leaf-3">
+				<svg viewBox="0 0 120 150">
+					<path d="M60 10 C90 30 110 70 90 110 C70 140 30 150 20 130 C10 110 30 80 50 60 C30 50 10 30 60 10Z"
+						fill="#3e8e41" opacity=".8" />
+				</svg>
+			</div>
+			<div class="leaf leaf-4">
+				<svg viewBox="0 0 160 200">
+					<path
+						d="M80 0 C120 30 150 90 130 150 C110 200 50 210 30 180 C10 155 40 110 60 80 C40 60 20 20 80 0Z"
+						fill="#2e6b2e" opacity=".7" />
+				</svg>
+			</div>
+
+			<div class="fruit-deco fruit-deco-1"></div>
+			<div class="fruit-deco fruit-deco-2"></div>
+			<div class="fruit-deco fruit-deco-3"></div>
+
+			<section class="hero">
+				<div class="hero-left">
+					<h1 class="hero-title">
+						Savourez l'essence<br>
+						juteuse <span class="accent"> de l'île.</span>
+					</h1>
+					<p class="hero-desc">
+						Découvrez une explosion de fraîcheur avec nos jus 100 % naturels,
+						sans sucres ajoutés, issus de l'agriculture locale et solidaire de Madagascar.
+					</p>
+					<div class="hero-ctas">
+						<a href="#products" class="btn-cta-main">Voir la collection →</a>
+						<a href="#about" class="btn-cta-ghost">Notre histoire ↗</a>
+					</div>
+					<div class="stats">
+						<div class="stat-item">
+							<div class="stat-val">100<sup>%</sup></div>
+							<div class="stat-label">Naturel</div>
+						</div>
+						<div class="stat-sep"></div>
+						<div class="stat-item">
+							<div class="stat-val">0<sup>g</sup></div>
+							<div class="stat-label">Sucre ajouté</div>
+						</div>
+						<div class="stat-sep"></div>
+						<div class="stat-item">
+							<div class="stat-val">12<sup>+</sup></div>
+							<div class="stat-label">Saveurs</div>
+						</div>
+						<div class="stat-sep"></div>
+						<div class="stat-item">
+							<div class="stat-val">5k<sup>+</sup></div>
+							<div class="stat-label">Clients</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero-right">
+					<div class="slide-ring"></div>
+					<div class="slide-ring slide-ring-2"></div>
+					<div class="slide-ring slide-ring-3"></div>
+					<div class="slide-glow"></div>
+					<div class="slide-stage">
+						<div class="juice-slide"><img src="./assets/images/orange.png" alt="Jus orange"></div>
+						<div class="juice-slide"><img src="./assets/images/ananas.png" alt="Jus ananas"></div>
+						<div class="juice-slide"><img src="./assets/images/raisin.png" alt="Jus raisin"></div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</header>
+	<main>
+		<div class="values-strip-premium">
+			<div class="marquee-premium">
+				<div class="marquee-content">
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path
+								d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+							<circle cx="12" cy="12" r="4" />
+						</svg>
+						<span>100% naturel</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M3 12h3l3-9 3 18 3-9h3" />
+						</svg>
+						<span>Sans conservateurs</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M20 12v8H4v-8M12 2v12m-4-4 4 4 4-4" />
+						</svg>
+						<span>Pressage à froid</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+							<path d="M12 6v6l4 2" />
+						</svg>
+						<span>Livraison express</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M21 16v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2M7 10l5 5 5-5" />
+						</svg>
+						<span>Producteurs locaux</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path
+								d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+							<circle cx="12" cy="12" r="4" />
+						</svg>
+						<span>100% naturel</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M3 12h3l3-9 3 18 3-9h3" />
+						</svg>
+						<span>Sans conservateurs</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M20 12v8H4v-8M12 2v12m-4-4 4 4 4-4" />
+						</svg>
+						<span>Pressage à froid</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+							<path d="M12 6v6l4 2" />
+						</svg>
+						<span>Livraison express</span>
+					</div>
+					<div class="value-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+							<path d="M21 16v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2M7 10l5 5 5-5" />
+						</svg>
+						<span>Producteurs locaux</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section id="about" class="about">
+			<div class="about-container">
+				<div class="about-text">
+					<h2>À propos de NTJuice</h2>
+					<p>Chez <strong>NTJuice</strong>, nous croyons que la nature offre le meilleur. Depuis notre
+						création, nous sélectionnons des fruits et légumes fraîchement récoltés auprès de producteurs
+						engagés dans une agriculture durable à Madagascar. Chaque bouteille est le fruit d'un pressage à
+						froid qui préserve vitamines, saveurs et arômes authentiques.</p>
+					<p>Notre mission : vous offrir des jus 100% naturels, sans additifs, sans sucres ajoutés, pour une
+						expérience saine et savoureuse au quotidien. Du verger à votre table, nous garantissons
+						transparence et qualité.</p>
+				</div>
+				<div class="about-image">
+					<img src="https://i.pinimg.com/736x/56/d6/10/56d610e5cd4c479952bbd4466236c1f4.jpg"
+						alt="Atelier NTJuice">
+				</div>
+			</div>
+
+			<div class="about-stats-premium">
+				<div class="stat-circle">
+					<div class="circle-wrapper">
+						<svg viewBox="0 0 120 120" class="progress-ring">
+							<defs>
+								<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+									<stop offset="0%" stop-color="#fe4a13" />
+									<stop offset="100%" stop-color="#f7b93d" />
+								</linearGradient>
+							</defs>
+							<circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.3)"
+								stroke-width="6" />
+							<circle cx="60" cy="60" r="52" fill="none" stroke="url(#grad1)" stroke-width="6"
+								stroke-linecap="round" class="progress-ring-fill"
+								style="--percent: 66.7; --circumference: 326.73;" />
+						</svg>
+						<div class="stat-number-large">10<span>+</span></div>
+					</div>
+					<div class="stat-label-premium">années d’expérience</div>
+				</div>
+
+				<div class="stat-circle">
+					<div class="circle-wrapper">
+						<svg viewBox="0 0 120 120" class="progress-ring">
+							<defs>
+								<linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+									<stop offset="0%" stop-color="#fe4a13" />
+									<stop offset="100%" stop-color="#f7b93d" />
+								</linearGradient>
+							</defs>
+							<circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.3)"
+								stroke-width="6" />
+							<circle cx="60" cy="60" r="52" fill="none" stroke="url(#grad2)" stroke-width="6"
+								stroke-linecap="round" class="progress-ring-fill"
+								style="--percent: 70; --circumference: 326.73;" />
+						</svg>
+						<div class="stat-number-large">35<span>+</span></div>
+					</div>
+					<div class="stat-label-premium">producteurs partenaires</div>
+				</div>
+
+				<div class="stat-circle">
+					<div class="circle-wrapper">
+						<svg viewBox="0 0 120 120" class="progress-ring">
+							<defs>
+								<linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+									<stop offset="0%" stop-color="#fe4a13" />
+									<stop offset="100%" stop-color="#f7b93d" />
+								</linearGradient>
+							</defs>
+							<circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.3)"
+								stroke-width="6" />
+							<circle cx="60" cy="60" r="52" fill="none" stroke="url(#grad3)" stroke-width="6"
+								stroke-linecap="round" class="progress-ring-fill"
+								style="--percent: 100; --circumference: 326.73;" />
+						</svg>
+						<div class="stat-number-large">100<span>%</span></div>
+					</div>
+					<div class="stat-label-premium">naturel</div>
+				</div>
+			</div>
+		</section>
+		<section id="products" class="products-premium">
+			<div class="section-header">
+				<span class="section-badge">Saveurs d'exception</span>
+				<h2>Nos jus <span>signature</span></h2>
+				<p>Fraîchement pressés, riches en nutriments, 100% naturels</p>
+			</div>
+			<div class="product-grid-premium">
+				<div class="product-card-premium" data-delay="0">
+					<div class="card-badge"> Bestseller</div>
+					<div class="card-media">
+						<div class="card-img orange">
+							<img src="../assets/images/orange.png" alt="Jus orange">
+						</div>
+					</div>
+					<div class="card-content">
+						<h3>Orange sanguine & Carotte</h3>
+						<p class="card-desc">Doux, vitaminé, riche en bêta-carotène.</p>
+						<div class="card-footer">
+							<span class="price">4 900 Ar</span>
+							<a href="#" class="btn-add">
+								<span>Ajouter</span>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<line x1="12" y1="5" x2="12" y2="19" />
+									<line x1="5" y1="12" x2="19" y2="12" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-card-premium" data-delay="1">
+					<div class="card-badge new">Nouveau</div>
+					<div class="card-media">
+						<div class="card-img ananas">
+							<img src="../assets/images/ananas.png" alt="Jus ananas">
+						</div>
+					</div>
+					<div class="card-content">
+						<h3>Ananas, Gingembre, Menthe</h3>
+						<p class="card-desc">Explosion de fraîcheur, boost naturel.</p>
+						<div class="card-footer">
+							<span class="price">5 500 Ar</span>
+							<a href="#" class="btn-add">
+								<span>Ajouter</span>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<line x1="12" y1="5" x2="12" y2="19" />
+									<line x1="5" y1="12" x2="19" y2="12" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-card-premium" data-delay="2">
+					<div class="card-badge organic">Bio</div>
+					<div class="card-media">
+						<div class="card-img raisin">
+							<img src="../assets/images/raisin.png" alt="Jus raisin">
+						</div>
+					</div>
+					<div class="card-content">
+						<h3>Raisin noir & Mûre</h3>
+						<p class="card-desc">Antioxydant, saveur profonde et intense.</p>
+						<div class="card-footer">
+							<span class="price">6 200 Ar</span>
+							<a href="#" class="btn-add">
+								<span>Ajouter</span>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<line x1="12" y1="5" x2="12" y2="19" />
+									<line x1="5" y1="12" x2="19" y2="12" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-card-premium" data-delay="3">
+					<div class="card-badge limited">Édition limitée</div>
+					<div class="card-media">
+						<div class="card-img red">
+							<img src="../assets/images/fraise.png" alt="Jus fruits rouges">
+						</div>
+					</div>
+					<div class="card-content">
+						<h3>Framboise, Mûre, Pomme</h3>
+						<p class="card-desc">Antioxydant, saveur intense.</p>
+						<div class="card-footer">
+							<span class="price">5 900 Ar</span>
+							<a href="#" class="btn-add">
+								<span>Ajouter</span>
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<line x1="12" y1="5" x2="12" y2="19" />
+									<line x1="5" y1="12" x2="19" y2="12" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="newsletter-premium">
+			<div class="newsletter-container">
+				<div class="newsletter-content">
+					<div class="newsletter-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path
+								d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+						</svg>
+					</div>
+					<h3>-15% sur votre première commande</h3>
+					<p>Recevez nos actualités, recettes exclusives et offres privilèges directement dans votre boîte
+						mail.</p>
+					<form class="news-form-premium" onsubmit="return false;">
+						<div class="input-group">
+							<input type="email" placeholder="Votre adresse email" required>
+							<button type="submit">S'abonner <span>→</span></button>
+						</div>
+						<div class="form-note">Aucun spam, désabonnement en 1 clic.</div>
+					</form>
+				</div>
+				<div class="newsletter-decoration">
+					<div class="floating-fruit fruit-1">🍊</div>
+					<div class="floating-fruit fruit-2">🍍</div>
+					<div class="floating-fruit fruit-3">🥭</div>
+					<div class="floating-fruit fruit-4">🍓</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer-premium">
+		<div class="footer-wave"></div>
+		<div class="footer-main">
+			<div class="footer-brand">
+				<div class="footer-logo">NTJuice<span>.</span></div>
+				<p>Jus naturels pressés à froid, du producteur à votre table.</p>
+				<div class="footer-social">
+					<a href="#" class="social-link" aria-label="Instagram">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+							<circle cx="12" cy="12" r="4" />
+							<line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+						</svg>
+					</a>
+					<a href="#" class="social-link" aria-label="Facebook">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+						</svg>
+					</a>
+					<a href="#" class="social-link" aria-label="Twitter">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path
+								d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+						</svg>
+					</a>
+					<a href="#" class="social-link" aria-label="Pinterest">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" />
+							<path d="M12 2a10 10 0 0 0-5 18.86" />
+							<path d="M12 2a10 10 0 0 1 5 18.86" />
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="footer-links-grid">
+				<div class="footer-col">
+					<h4>Découvrir</h4>
+					<ul>
+						<li><a href="#products">Nos jus</a></li>
+						<li><a href="#">Engagements</a></li>
+						<li><a href="#">Producteurs</a></li>
+						<li><a href="#">Recettes</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Service client</h4>
+					<ul>
+						<li><a href="#">Livraison</a></li>
+						<li><a href="#">Paiement sécurisé</a></li>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="./docs/contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Légal</h4>
+					<ul>
+						<li><a href="#">Mentions légales</a></li>
+						<li><a href="#">Confidentialité</a></li>
+						<li><a href="#">CGV</a></li>
+					</ul>
+				</div>
+				<div class="footer-col newsletter-col">
+					<h4>Restons en contact</h4>
+					<p>Recevez nos actualités et offres exclusives</p>
+					<form class="footer-newsletter" onsubmit="return false;">
+						<div class="input-group">
+							<input type="email" placeholder="Votre email" required>
+							<button type="submit">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>© 2025 NTJuice — Tous droits réservés</span>
+			<span>100% naturel, sans arômes artificiels</span>
+		</div>
+	</footer>
+</body>
+
+</html>

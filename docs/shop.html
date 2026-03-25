@@ -1,0 +1,434 @@
+<!-- shop.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NTJuice | Boutique</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .shop-hero {
+            background-image: linear-gradient(to bottom, #1e2a1ab3, #a2ff749b), url("https://i.pinimg.com/736x/c2/36/07/c236070c10bcf9093459e5f46ecb7c35.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(254, 74, 19, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .shop-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .shop-hero h1 span {
+            color: var(--orange);
+            font-style: italic;
+        }
+
+        .shop-hero p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.4rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            color: rgb(0, 0, 0);
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--orange);
+        }
+
+        .filter-btn:hover,
+        input:checked+.filter-btn {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: var(--text-dark);
+        }
+
+        .filter-radio {
+            display: none;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .products-grid:has(.filter-radio#all:checked) .product-card {
+            display: flex;
+        }
+
+        .products-grid:has(.filter-radio#citrus:checked) .product-card:not(.citrus) {
+            display: none;
+        }
+
+        .products-grid:has(.filter-radio#tropical:checked) .product-card:not(.tropical) {
+            display: none;
+        }
+
+        .products-grid:has(.filter-radio#berries:checked) .product-card:not(.berries) {
+            display: none;
+        }
+
+        .products-grid:has(.filter-radio#veg:checked) .product-card:not(.veg) {
+            display: none;
+        }
+
+        .products-grid:has(.filter-radio#detox:checked) .product-card:not(.detox) {
+            display: none;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-bounce);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(254, 74, 19, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-img {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img img {
+            max-width: 80%;
+            max-height: 160px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin: 0.5rem 0;
+        }
+
+        .product-price {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--orange-dark);
+            margin: 0.5rem 0;
+        }
+
+        .add-btn {
+            display: inline-block;
+            background: var(--orange-dark);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .add-btn:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        /* Packs */
+        .packs {
+            background: linear-gradient(145deg, #1a2a12, #0e1e0a);
+            border-radius: 48px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .packs h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pack-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            padding: 2rem;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pack-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--orange);
+        }
+
+        .pack-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--orange-light);
+        }
+
+        .pack-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--orange-dark);
+            margin: 1rem 0;
+        }
+
+        .pack-desc {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-pack {
+            background: var(--orange-dark);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-pack:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .packs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .raisin_img {
+            background-color: #242124;
+        }
+
+        .royal_img {
+            background-color: #AF3C43;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="sticky-nav">
+        <div class="nav-inner">
+            <div class="logo"><a href="../index.html">NTJuice<span>.</span></a></div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../index.html#products">Nos jus</a></li>
+                <li><a href="../index.html#about">À propos</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="shop.html" class="btn-order">Commander →</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="shop-hero">
+        <h1>Notre <span>Boutique</span><br>de Jus Naturels</h1>
+        <p>Fraîchement pressés, sans conservateurs, livrés chez vous.</p>
+    </section>
+
+    <!-- Conteneur principal centré avec marges automatiques gauche/droite -->
+    <div class="products" style="max-width:1280px; margin-left:auto; margin-right:auto; margin-top:2rem; margin-bottom:2rem; padding:0 2rem;">
+        <div class="filters">
+            <input type="radio" name="category" id="all" class="filter-radio" checked>
+            <label for="all" class="filter-btn">Tous</label>
+            <input type="radio" name="category" id="citrus" class="filter-radio">
+            <label for="citrus" class="filter-btn">Agrumes</label>
+            <input type="radio" name="category" id="tropical" class="filter-radio">
+            <label for="tropical" class="filter-btn">Tropicaux</label>
+            <input type="radio" name="category" id="berries" class="filter-radio">
+            <label for="berries" class="filter-btn">Baies</label>
+            <input type="radio" name="category" id="veg" class="filter-radio">
+            <label for="veg" class="filter-btn">Légumes</label>
+            <input type="radio" name="category" id="detox" class="filter-radio">
+            <label for="detox" class="filter-btn">Détox</label>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card citrus">
+                <div class="product-img" style="background-color: #ffa700;"><img src="../assets/images/orange.png" alt="Orange sanguine"></div>
+                <div class="product-info">
+                    <div class="product-name">Orange Soleil</div>
+                    <div class="product-desc">Oranges de saison pressées à froid, riche en vitamine C.</div>
+                    <div class="product-price">3 500 Ar</div>
+                    <a href="#" class="add-btn">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card mango">
+                <div class="product-img" style="background-color: #F4BB44;"><img src="../assets/images/mango.png" alt="Mangue et ananas"></div>
+                <div class="product-info">
+                    <div class="product-name">Mango Vert</div>
+                    <div class="product-desc">Mangue malgache & citron vert, une explosion tropicale.</div>
+                    <div class="product-price">4 000 Ar</div>
+                    <a href="#" class="add-btn">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card berries">
+                <div class="product-img " style="background-color: #990F4B;"><img src="../assets/images/baie.png" alt="Baies sauvages"></div>
+                <div class="product-info">
+                    <div class="product-name">Baies Royales</div>
+                    <div class="product-desc">Fraises, framboises, goyave — antioxydant et fruité.</div>
+                    <div class="product-price">4 200 Ar</div>
+                    <a href="#" class="add-btn">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card tropical">
+                <div class="product-img raisin_img"><img src="../assets/images/raisin.png" alt="Citron gingembre"></div>
+                <div class="product-info">
+                    <div class="product-name">Raisin Gasy</div>
+                    <div class="product-desc">Boost immunitaire, duo dynamique pour l’énergie.</div>
+                    <div class="product-price">3 800 Ar</div>
+                    <a href="#" class="add-btn">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card detox">
+                <div class="product-img detox_img" style="background-color: rgb(50, 137, 50);"><img src="../assets/images/green.png" alt="Green détox"></div>
+                <div class="product-info">
+                    <div class="product-name">Green Détox</div>
+                    <div class="product-desc">Concombre, céleri, menthe, citron — la cure ultime.</div>
+                    <div class="product-price">4 200 Ar</div>
+                    <a href="#" class="add-btn">Ajouter au panier</a>
+                </div>
+            </div>
+            <div class="product-card tropical">
+                <div class="product-img royal_img"><img src="../assets/images/royal.png" alt="Grenade"></div>
+                <div class="product-info">
+                    <div class="product-name">Grenade Royale</div>
+                    <div class="product-desc">Grenade & açaï, antioxydant intense.</div>
+                    <div class="product-price">4 500 Ar</div>
+                    <a href="#" class="add-btn">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="packs">
+        <h2>Packs & Abonnements</h2>
+        <div class="packs-grid">
+            <div class="pack-card">
+                <div class="pack-name">Starter</div>
+                <div class="pack-price">9 000 Ar</div>
+                <div class="pack-desc">3 bouteilles au choix, livraison incluse.</div>
+                <button class="btn-pack">Choisir ce pack</button>
+            </div>
+            <div class="pack-card">
+                <div class="pack-name">Découverte</div>
+                <div class="pack-price">18 000 Ar</div>
+                <div class="pack-desc">6 bouteilles, 6 saveurs, sac isotherme offert.</div>
+                <button class="btn-pack">Choisir ce pack</button>
+            </div>
+            <div class="pack-card">
+                <div class="pack-name">Mensuel</div>
+                <div class="pack-price">32 000 Ar / mois</div>
+                <div class="pack-desc">12 bouteilles, personnalisation, livraison gratuite.</div>
+                <button class="btn-pack">S'abonner</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">NTJuice<span>.</span></div>
+                <p style="margin-top:0.8rem; font-size:0.85rem; color: whitesmoke;">Jus naturels pressés à froid, du producteur à votre
+                    table.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Découvrir</h4>
+                <ul>
+                    <li><a href="../index.html#products">Nos jus</a></li>
+                    <li><a href="#">Engagements</a></li>
+                    <li><a href="#">Producteurs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Service client</h4>
+                <ul>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Paiement</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span style="color: whitesmoke;">© 2025 NTJuice — Tous droits réservés</span>
+            <span style="color: whitesmoke;">100% naturel, sans arômes artificiels</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

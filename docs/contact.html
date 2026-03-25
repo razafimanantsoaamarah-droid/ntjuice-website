@@ -1,0 +1,418 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>NTJuice | Contact & FAQ</title>
+	<link rel="stylesheet" href="../css/index.css">
+	<style>
+		.contact-hero {
+			background-image: linear-gradient(to bottom, #1e2a1ab3, #a2ff749b), url("https://i.pinimg.com/736x/c2/36/07/c236070c10bcf9093459e5f46ecb7c35.jpg");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			padding: 8rem 2rem 4rem;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.contact-hero h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: clamp(2.5rem, 5vw, 4rem);
+			font-weight: 900;
+			color: white;
+		}
+
+		.contact-hero h1 span {
+			color: var(--orange);
+			font-style: italic;
+		}
+
+		.contact-hero p {
+			color: rgba(255, 255, 255, 0.7);
+			max-width: 500px;
+			margin: 1rem auto;
+		}
+
+		.contact-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 3rem;
+			max-width: 1280px;
+			margin: 4rem auto;
+			padding: 0 2rem;
+		}
+
+		.form-card,
+		.info-card {
+			background: white;
+			border-radius: 28px;
+			padding: 2rem;
+			box-shadow: var(--shadow-md);
+			border: 1px solid rgba(254, 74, 19, 0.1);
+		}
+
+		.form-card h2,
+		.info-card h3 {
+			font-family: 'Playfair Display', serif;
+			font-size: 1.8rem;
+			margin-bottom: 1rem;
+			color: var(--text-dark);
+		}
+
+		.form-group {
+			margin-bottom: 1.2rem;
+		}
+
+		.form-group label {
+			display: block;
+			font-weight: 600;
+			margin-bottom: 0.4rem;
+			color: var(--text-light);
+		}
+
+		.form-group input,
+		.form-group select,
+		.form-group textarea {
+			width: 100%;
+			padding: 0.8rem 1rem;
+			border: 1px solid rgba(254, 74, 19, 0.2);
+			border-radius: 60px;
+			font-family: inherit;
+			background: var(--cream);
+			transition: all 0.3s;
+		}
+
+		.form-group input:focus,
+		.form-group textarea:focus {
+			outline: none;
+			border-color: var(--orange);
+			box-shadow: 0 0 0 3px rgba(254, 74, 19, 0.1);
+		}
+
+		.form-group textarea {
+			border-radius: 24px;
+			resize: vertical;
+		}
+
+		.radio-group {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin: 0.5rem 0;
+		}
+
+		.radio-group label {
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			font-weight: normal;
+			cursor: pointer;
+		}
+
+		.btn-submit {
+			background: var(--orange-dark);
+			color: white;
+			border: none;
+			padding: 0.8rem 2rem;
+			border-radius: 9999px;
+			font-weight: 700;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+
+		.btn-submit:hover {
+			background: var(--orange);
+			transform: translateY(-2px);
+		}
+
+		.info-card {
+			margin-bottom: 1.5rem;
+		}
+
+		.contact-icon-svg {
+			width: 40px;
+			height: 40px;
+			margin-bottom: 0.8rem;
+			display: inline-block;
+		}
+
+		.contact-icon-svg svg {
+			width: 100%;
+			height: 100%;
+			stroke: var(--orange-dark);
+			stroke-width: 1.5;
+			fill: none;
+		}
+
+		.faq {
+			background: linear-gradient(145deg, #1a2a12, #0e1e0a);
+			border-radius: 48px;
+			padding: 3rem 2rem;
+			margin: 4rem auto;
+			max-width: 1280px;
+		}
+
+		.faq h2 {
+			text-align: center;
+			font-family: 'Playfair Display', serif;
+			font-size: 2rem;
+			color: white;
+			margin-bottom: 2rem;
+		}
+
+		.faq-item {
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 24px;
+			margin-bottom: 1rem;
+			overflow: hidden;
+		}
+
+		.faq-question {
+			width: 100%;
+			padding: 1.2rem 1.5rem;
+			background: transparent;
+			border: none;
+			text-align: left;
+			font-weight: 600;
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.faq-question:focus {
+			outline: none;
+		}
+
+		.faq-question .icon-svg {
+			width: 24px;
+			height: 24px;
+			transition: transform 0.3s;
+		}
+
+		.faq-question .icon-svg svg {
+			width: 100%;
+			height: 100%;
+			stroke: var(--orange);
+			stroke-width: 2;
+			fill: none;
+		}
+
+		.faq-answer {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.4s ease-out;
+			padding: 0 1.5rem;
+			color: rgba(255, 255, 255, 0.7);
+		}
+
+		.faq-item:focus-within .faq-answer {
+			max-height: 200px;
+			padding-bottom: 1.2rem;
+		}
+
+		.faq-item:focus-within .icon-svg {
+			transform: rotate(45deg);
+		}
+
+		@media (max-width: 768px) {
+			.contact-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="sticky-nav">
+		<div class="nav-inner">
+			<div class="logo"><a href="../index.html">NTJuice<span>.</span></a></div>
+			<input type="checkbox" id="menu-toggle" class="menu-toggle">
+			<label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+			<ul class="nav-links">
+				<li><a href="../index.html">Accueil</a></li>
+				<li><a href="../index.html#products">Nos jus</a></li>
+				<li><a href="../index.html#about">À propos</a></li>
+				<li><a href="contact.html" class="active">Contact</a></li>
+				<li><a href="./shop.html" class="btn-order">Commander →</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="contact-hero">
+		<h1>Parlons <span>ensemble</span></h1>
+		<p>Une question, une commande, un partenariat ? Notre équipe est à votre écoute.</p>
+	</section>
+
+	<div class="contact-grid">
+		<div class="form-card">
+			<h2>Envoyez-nous un message</h2>
+			<form onsubmit="return false">
+				<div class="form-group">
+					<label>Prénom & Nom</label>
+					<input type="text" placeholder="Votre nom complet">
+				</div>
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" placeholder="votre@email.com">
+				</div>
+				<div class="form-group">
+					<label>Téléphone</label>
+					<input type="tel" placeholder="+261 34 00 000 00">
+				</div>
+				<div class="form-group">
+					<label>Sujet</label>
+					<div class="radio-group">
+						<label><input type="radio" name="subject" checked> Commande</label>
+						<label><input type="radio" name="subject"> Livraison</label>
+						<label><input type="radio" name="subject"> Partenariat</label>
+						<label><input type="radio" name="subject"> Autre</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Message</label>
+					<textarea rows="4" placeholder="Décrivez votre demande..."></textarea>
+				</div>
+				<button class="btn-submit" type="submit">Envoyer le message →</button>
+			</form>
+		</div>
+		<div>
+			<div class="info-card">
+				<div class="contact-icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+						<path
+							d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+					</svg>
+				</div>
+				<h3>Téléphone</h3>
+				<p>+261 34 00 000 00</p>
+				<p>Lun–Sam, 8h–18h</p>
+			</div>
+			<div class="info-card">
+				<div class="contact-icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+						<polyline points="22,6 12,13 2,6" />
+					</svg>
+				</div>
+				<h3>Email</h3>
+				<p>bonjour@ntjuice.mg</p>
+				<p>Réponse sous 24h</p>
+			</div>
+			<div class="info-card">
+				<div class="contact-icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor" fill="none">
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+						<circle cx="12" cy="10" r="3" />
+					</svg>
+				</div>
+				<h3>Adresse</h3>
+				<p>Antananarivo, Madagascar</p>
+				<p>Retrait sur rendez-vous</p>
+			</div>
+			<div class="info-card" style="background:var(--orange-soft); border-color:var(--orange);">
+				<h3 style="color:var(--text-dark)">Livraison fraîcheur</h3>
+				<p>Commandez avant 12h, livré le lendemain à Tana. Zones couvertes : Tana, Mahajanga, Toamasina.</p>
+			</div>
+		</div>
+	</div>
+
+	<section class="faq">
+		<h2>Questions fréquentes</h2>
+		<div class="faq-item" tabindex="0">
+			<div class="faq-question">
+				Combien de temps se conservent vos jus ?
+				<span class="icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor">
+						<line x1="12" y1="5" x2="12" y2="19" />
+						<line x1="5" y1="12" x2="19" y2="12" />
+					</svg>
+				</span>
+			</div>
+			<div class="faq-answer">Nos jus pressés à froid se conservent 5 à 7 jours au réfrigérateur, sans
+				conservateurs.</div>
+		</div>
+		<div class="faq-item" tabindex="0">
+			<div class="faq-question">
+				Contiennent-ils du sucre ajouté ?
+				<span class="icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor">
+						<line x1="12" y1="5" x2="12" y2="19" />
+						<line x1="5" y1="12" x2="19" y2="12" />
+					</svg>
+				</span>
+			</div>
+			<div class="faq-answer">Non, 100% fruits, sans aucun ajout de sucre, colorant ou conservateur.</div>
+		</div>
+		<div class="faq-item" tabindex="0">
+			<div class="faq-question">
+				Livrez-vous dans toute l’île ?
+				<span class="icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor">
+						<line x1="12" y1="5" x2="12" y2="19" />
+						<line x1="5" y1="12" x2="19" y2="12" />
+					</svg>
+				</span>
+			</div>
+			<div class="faq-answer">Actuellement Antananarivo (24h), Mahajanga, Toamasina, Fianarantsoa (48-72h).</div>
+		</div>
+		<div class="faq-item" tabindex="0">
+			<div class="faq-question">
+				Comment passer une commande groupée ?
+				<span class="icon-svg">
+					<svg viewBox="0 0 24 24" stroke="currentColor">
+						<line x1="12" y1="5" x2="12" y2="19" />
+						<line x1="5" y1="12" x2="19" y2="12" />
+					</svg>
+				</span>
+			</div>
+			<div class="faq-answer">Contactez notre équipe pro à pro@ntjuice.mg pour des tarifs dégressifs.</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer-container">
+			<div class="footer-col">
+				<div class="footer-logo">NTJuice<span>.</span></div>
+				<p style="margin-top:0.8rem; font-size:0.85rem; color: whitesmoke;">Jus naturels pressés à froid, du producteur à votre
+                    table</p>
+			</div>
+			<div class="footer-col">
+				<h4>Découvrir</h4>
+				<ul>
+					<li><a href="../index.html#products">Nos jus</a></li>
+					<li><a href="#">Engagements</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Service client</h4>
+				<ul>
+					<li><a href="#">Livraison</a></li>
+					<li><a href="#">Paiement</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Légal</h4>
+				<ul>
+					<li><a href="#">Mentions légales</a></li>
+					<li><a href="#">Confidentialité</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span style="color: whitesmoke;">© 2025 NTJuice — Tous droits réservés</span>
+			<span style="color: whitesmoke;">100% naturel, sans arômes artificiels</span>
+		</div>
+	</footer>
+
+</body>
+
+</html>
