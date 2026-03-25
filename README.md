@@ -1,6 +1,6 @@
 # NTJuice – Jus naturels de Madagascar
 
-<img width="259" height="194" alt="image" src="https://github.com/user-attachments/assets/808d2af3-99e3-4ff8-a9fd-18d8d71ac861" />
+<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/eb78a661-0f2a-4e26-a464-682f884ca0e4" />
 
 **NTJuice** est un site vitrine fictif pour une marque de jus de fruits naturels pressés à froid, originaire de Madagascar.  
 Le site met en avant l'authenticité des produits, la fraîcheur des ingrédients et l’engagement pour une agriculture durable.
@@ -65,7 +65,7 @@ ntjuice-website/
 1. **Cloner le dépôt**  
    ```bash
     https://github.com/razafimanantsoaamarah-droid/ntjuice-website.git
-```
+   ```
 2. **Ouvrir le fichier** `index.html` dans votre navigateur  
    Pas de serveur nécessaire, le site fonctionne en local.
 
